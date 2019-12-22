@@ -1,11 +1,12 @@
 import PhaserLogo from '../objects/phaserLogo'
 import FpsText from '../objects/fpsText'
+import {CST} from '../CST'
 
 export default class MainScene extends Phaser.Scene {
   fpsText: Phaser.GameObjects.Text
 
   constructor() {
-    super({ key: 'MainScene' })
+    super({ key: CST.SCENES.PLAY})
   }
 
   create() {

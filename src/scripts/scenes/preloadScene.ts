@@ -1,6 +1,8 @@
+import {CST} from '../CST'
+
 export default class PreloadScene extends Phaser.Scene {
   constructor() {
-    super({ key: 'PreloadScene' })
+    super({ key: CST.SCENES.PRELOAD })
   }
 
   preload() {
@@ -8,7 +10,7 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   create() {
-    this.scene.start('MainScene')
+    this.scene.start(CST.SCENES.PLAY)
 
     /**
      * This is how you would dynamically import the mainScene class (with code splitting),
