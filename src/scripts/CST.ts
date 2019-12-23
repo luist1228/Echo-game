@@ -12,6 +12,6 @@ export const CST = {
         
     },
     SPRITE: {
-        
+        PLAYER:"PLAYER"
     }
 }

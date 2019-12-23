@@ -6,11 +6,40 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   preload() {
+    //load Images
     this.load.image('phaser-logo', 'assets/img/phaser-logo.png')
+    
+    //load Atlases
+    this.load.atlas("player","assets/Packs/playersprite.png", "assets/Packs/playersprite_atlas.json")
   }
 
   create() {
+
+    this.anims.create({
+      key: 'idleHandgun',
+      frames: this.anims.generateFrameNames('player',{prefix:'survivor-idle_handgun_', end:19}),
+      frameRate: 16,
+      repeat: -1
+    });
+
+    //player move
+    this.anims.create({
+      key: 'moveHandgun',
+      frames: this.anims.generateFrameNames('player',{prefix:'survivor-move_handgun_', end:19}),
+      frameRate: 32,
+      repeat:-1
+    });
+    
+    //player shoot
+    this.anims.create({
+      key: 'shootHandgun',
+      frames: this.anims.generateFrameNames('player',{prefix:'survivor-shoot_handgun_', end:2}),
+      frameRate: 16,
+      repeat: -1
+    });
+    
     this.scene.start(CST.SCENES.PLAY)
+
 
     /**
      * This is how you would dynamically import the mainScene class (with code splitting),

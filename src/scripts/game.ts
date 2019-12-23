@@ -8,6 +8,7 @@ const DEFAULT_HEIGHT = 720
 // @ts-ignore https://github.com/photonstorm/phaser/issues/4522
 // still not working in 3.18.1 :/
 const config: GameConfig = {
+  type: Phaser.AUTO,
   backgroundColor: '#ffffff',
   scale: {
     parent: 'phaser-game',
@@ -20,8 +21,8 @@ const config: GameConfig = {
   physics: {
     default: 'arcade',
     arcade: {
-      debug: false,
-      gravity: { y: 400 }
+      debug: true,
+      
     }
   }
 }
