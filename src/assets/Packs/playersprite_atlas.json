@@ -1,270 +1,10 @@
 {
     "frames": [
         {
-            "filename": "survivor-idle_handgun_0",
-            "frame": {
-                "x": 0,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_1",
-            "frame": {
-                "x": 253,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_2",
-            "frame": {
-                "x": 506,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_3",
-            "frame": {
-                "x": 759,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_4",
-            "frame": {
-                "x": 1012,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_5",
-            "frame": {
-                "x": 1265,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_6",
-            "frame": {
-                "x": 1518,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_7",
-            "frame": {
-                "x": 1771,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_8",
-            "frame": {
-                "x": 2024,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_9",
-            "frame": {
-                "x": 2277,
-                "y": 0,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_10",
-            "frame": {
-                "x": 0,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_11",
-            "frame": {
-                "x": 253,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_12",
-            "frame": {
-                "x": 506,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_13",
-            "frame": {
-                "x": 759,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_14",
-            "frame": {
-                "x": 1012,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_15",
-            "frame": {
-                "x": 1265,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_16",
-            "frame": {
-                "x": 1518,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_17",
-            "frame": {
-                "x": 1771,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_18",
-            "frame": {
-                "x": 2024,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "survivor-idle_handgun_19",
-            "frame": {
-                "x": 2277,
-                "y": 216,
-                "w": 253,
-                "h": 216
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
             "filename": "survivor-move_handgun_0",
             "frame": {
                 "x": 0,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -277,7 +17,7 @@
             "filename": "survivor-move_handgun_1",
             "frame": {
                 "x": 258,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -290,7 +30,7 @@
             "filename": "survivor-move_handgun_2",
             "frame": {
                 "x": 516,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -303,7 +43,7 @@
             "filename": "survivor-move_handgun_3",
             "frame": {
                 "x": 774,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -316,7 +56,7 @@
             "filename": "survivor-move_handgun_4",
             "frame": {
                 "x": 1032,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -329,7 +69,7 @@
             "filename": "survivor-move_handgun_5",
             "frame": {
                 "x": 1290,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -342,7 +82,7 @@
             "filename": "survivor-move_handgun_6",
             "frame": {
                 "x": 1548,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -355,7 +95,7 @@
             "filename": "survivor-move_handgun_7",
             "frame": {
                 "x": 1806,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -368,7 +108,7 @@
             "filename": "survivor-move_handgun_8",
             "frame": {
                 "x": 2064,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -381,7 +121,7 @@
             "filename": "survivor-move_handgun_9",
             "frame": {
                 "x": 2322,
-                "y": 432,
+                "y": 0,
                 "w": 258,
                 "h": 220
             },
@@ -394,7 +134,7 @@
             "filename": "survivor-move_handgun_10",
             "frame": {
                 "x": 0,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
             },
@@ -407,7 +147,7 @@
             "filename": "survivor-move_handgun_11",
             "frame": {
                 "x": 258,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
             },
@@ -420,7 +160,7 @@
             "filename": "survivor-move_handgun_12",
             "frame": {
                 "x": 516,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
             },
@@ -433,7 +173,7 @@
             "filename": "survivor-move_handgun_13",
             "frame": {
                 "x": 774,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
             },
@@ -446,7 +186,7 @@
             "filename": "survivor-move_handgun_14",
             "frame": {
                 "x": 1032,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
             },
@@ -459,7 +199,7 @@
             "filename": "survivor-move_handgun_15",
             "frame": {
                 "x": 1290,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
             },
@@ -472,7 +212,7 @@
             "filename": "survivor-move_handgun_16",
             "frame": {
                 "x": 1548,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
             },
@@ -485,7 +225,7 @@
             "filename": "survivor-move_handgun_17",
             "frame": {
                 "x": 1806,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
             },
@@ -498,7 +238,7 @@
             "filename": "survivor-move_handgun_18",
             "frame": {
                 "x": 2064,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
             },
@@ -511,9 +251,269 @@
             "filename": "survivor-move_handgun_19",
             "frame": {
                 "x": 2322,
-                "y": 652,
+                "y": 220,
                 "w": 258,
                 "h": 220
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_0",
+            "frame": {
+                "x": 0,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_1",
+            "frame": {
+                "x": 253,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_2",
+            "frame": {
+                "x": 506,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_3",
+            "frame": {
+                "x": 759,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_4",
+            "frame": {
+                "x": 1012,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_5",
+            "frame": {
+                "x": 1265,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_6",
+            "frame": {
+                "x": 1518,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_7",
+            "frame": {
+                "x": 1771,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_8",
+            "frame": {
+                "x": 2024,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_9",
+            "frame": {
+                "x": 2277,
+                "y": 440,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_10",
+            "frame": {
+                "x": 0,
+                "y": 656,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_11",
+            "frame": {
+                "x": 253,
+                "y": 656,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_12",
+            "frame": {
+                "x": 506,
+                "y": 656,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_13",
+            "frame": {
+                "x": 759,
+                "y": 656,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_14",
+            "frame": {
+                "x": 1012,
+                "y": 656,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_15",
+            "frame": {
+                "x": 1265,
+                "y": 656,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_16",
+            "frame": {
+                "x": 1518,
+                "y": 656,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_17",
+            "frame": {
+                "x": 1771,
+                "y": 656,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_18",
+            "frame": {
+                "x": 2024,
+                "y": 656,
+                "w": 253,
+                "h": 216
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_handgun_19",
+            "frame": {
+                "x": 2277,
+                "y": 656,
+                "w": 253,
+                "h": 216
             },
             "anchor": {
                 "x": 0.5,
@@ -553,6 +553,799 @@
                 "y": 872,
                 "w": 255,
                 "h": 215
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-idle_0",
+            "frame": {
+                "x": 765,
+                "y": 872,
+                "w": 132,
+                "h": 155
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_0",
+            "frame": {
+                "x": 897,
+                "y": 872,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_1",
+            "frame": {
+                "x": 1101,
+                "y": 872,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_2",
+            "frame": {
+                "x": 1305,
+                "y": 872,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_3",
+            "frame": {
+                "x": 1509,
+                "y": 872,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_4",
+            "frame": {
+                "x": 1713,
+                "y": 872,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_5",
+            "frame": {
+                "x": 1917,
+                "y": 872,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_6",
+            "frame": {
+                "x": 0,
+                "y": 1087,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_7",
+            "frame": {
+                "x": 204,
+                "y": 1087,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_8",
+            "frame": {
+                "x": 408,
+                "y": 1087,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_9",
+            "frame": {
+                "x": 612,
+                "y": 1027,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_10",
+            "frame": {
+                "x": 816,
+                "y": 996,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_11",
+            "frame": {
+                "x": 1020,
+                "y": 996,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_12",
+            "frame": {
+                "x": 1224,
+                "y": 996,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_13",
+            "frame": {
+                "x": 1428,
+                "y": 996,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_14",
+            "frame": {
+                "x": 1632,
+                "y": 996,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_15",
+            "frame": {
+                "x": 1836,
+                "y": 996,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_16",
+            "frame": {
+                "x": 0,
+                "y": 1211,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_17",
+            "frame": {
+                "x": 204,
+                "y": 1211,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_18",
+            "frame": {
+                "x": 408,
+                "y": 1211,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-run_19",
+            "frame": {
+                "x": 612,
+                "y": 1151,
+                "w": 204,
+                "h": 124
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_0",
+            "frame": {
+                "x": 816,
+                "y": 1120,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_1",
+            "frame": {
+                "x": 971,
+                "y": 1120,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_2",
+            "frame": {
+                "x": 1126,
+                "y": 1120,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_3",
+            "frame": {
+                "x": 1281,
+                "y": 1120,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_4",
+            "frame": {
+                "x": 1436,
+                "y": 1120,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_5",
+            "frame": {
+                "x": 1591,
+                "y": 1120,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_6",
+            "frame": {
+                "x": 0,
+                "y": 1335,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_7",
+            "frame": {
+                "x": 155,
+                "y": 1335,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_8",
+            "frame": {
+                "x": 310,
+                "y": 1335,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_9",
+            "frame": {
+                "x": 465,
+                "y": 1275,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_10",
+            "frame": {
+                "x": 620,
+                "y": 1294,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_11",
+            "frame": {
+                "x": 775,
+                "y": 1294,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_12",
+            "frame": {
+                "x": 930,
+                "y": 1294,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_13",
+            "frame": {
+                "x": 1085,
+                "y": 1294,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_14",
+            "frame": {
+                "x": 1240,
+                "y": 1294,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_15",
+            "frame": {
+                "x": 1395,
+                "y": 1294,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_16",
+            "frame": {
+                "x": 0,
+                "y": 1509,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_17",
+            "frame": {
+                "x": 155,
+                "y": 1509,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_18",
+            "frame": {
+                "x": 310,
+                "y": 1509,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_left_19",
+            "frame": {
+                "x": 465,
+                "y": 1449,
+                "w": 155,
+                "h": 174
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_0",
+            "frame": {
+                "x": 620,
+                "y": 1468,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_1",
+            "frame": {
+                "x": 774,
+                "y": 1468,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_2",
+            "frame": {
+                "x": 928,
+                "y": 1468,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_3",
+            "frame": {
+                "x": 1082,
+                "y": 1468,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_4",
+            "frame": {
+                "x": 1236,
+                "y": 1468,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_5",
+            "frame": {
+                "x": 1390,
+                "y": 1468,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_6",
+            "frame": {
+                "x": 0,
+                "y": 1683,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_7",
+            "frame": {
+                "x": 154,
+                "y": 1683,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_8",
+            "frame": {
+                "x": 308,
+                "y": 1683,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_9",
+            "frame": {
+                "x": 462,
+                "y": 1623,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_10",
+            "frame": {
+                "x": 616,
+                "y": 1644,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_11",
+            "frame": {
+                "x": 770,
+                "y": 1644,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_12",
+            "frame": {
+                "x": 924,
+                "y": 1644,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_13",
+            "frame": {
+                "x": 1078,
+                "y": 1644,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_14",
+            "frame": {
+                "x": 1232,
+                "y": 1644,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_15",
+            "frame": {
+                "x": 1386,
+                "y": 1644,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_16",
+            "frame": {
+                "x": 0,
+                "y": 1859,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_17",
+            "frame": {
+                "x": 154,
+                "y": 1859,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_18",
+            "frame": {
+                "x": 308,
+                "y": 1859,
+                "w": 154,
+                "h": 176
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "survivor-strafe_right_19",
+            "frame": {
+                "x": 462,
+                "y": 1799,
+                "w": 154,
+                "h": 176
             },
             "anchor": {
                 "x": 0.5,

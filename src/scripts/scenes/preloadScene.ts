@@ -11,6 +11,7 @@ export default class PreloadScene extends Phaser.Scene {
     
     //load Atlases
     this.load.atlas("player","assets/Packs/playersprite.png", "assets/Packs/playersprite_atlas.json")
+    this.load.atlas("patas","assets/Packs/feet.png", "assets/Packs/feet_atlas.json")
   }
 
   create() {
@@ -26,7 +27,7 @@ export default class PreloadScene extends Phaser.Scene {
     this.anims.create({
       key: 'moveHandgun',
       frames: this.anims.generateFrameNames('player',{prefix:'survivor-move_handgun_', end:19}),
-      frameRate: 32,
+      frameRate: 48,
       repeat:-1
     });
     
@@ -37,6 +38,14 @@ export default class PreloadScene extends Phaser.Scene {
       frameRate: 16,
       repeat: -1
     });
+
+    this.anims.create({
+      key:"feetRun",
+      frames: this.anims.generateFrameNames('patas',{prefix:'survivor-run_', end:19}),
+      frameRate:48,
+      repeat:-1
+    
+    })
     
     this.scene.start(CST.SCENES.PLAY)
 

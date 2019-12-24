@@ -7,6 +7,7 @@ export default class MainScene extends Phaser.Scene {
 
   fpsText: Phaser.GameObjects.Text
   public player: PlayerSprite
+  
   keyboard!: any
   
   constructor() {
@@ -18,9 +19,8 @@ export default class MainScene extends Phaser.Scene {
   }
   
   create() {
-    this.player=new PlayerSprite(this,100,100,350)
-    console.log(this.player.speed)
-    
+    this.player=new PlayerSprite(this,100,100,350).setSize(177,130).setOffset(35,65)
+    this.player.playerfeet.setSize(10,10).setOffset(50,77)
     //keyboard
     this.keyboard=this.input.keyboard.addKeys({
       'up': Phaser.Input.Keyboard.KeyCodes.W, 
@@ -28,8 +28,7 @@ export default class MainScene extends Phaser.Scene {
       'right' : Phaser.Input.Keyboard.KeyCodes.D,
       'left':Phaser.Input.Keyboard.KeyCodes.A,
     });
-    var keys = this.input.keyboard.addKeys('W,S,A,D');
-
+    this.player.playerfeet.play("feetRun");
     this.fpsText = new FpsText(this)
 
     
@@ -46,6 +45,7 @@ export default class MainScene extends Phaser.Scene {
 
     if(this.keyboard.up.isDown == true){
       this.player.moveUp()
+      
     }
     if (this.keyboard.down.isDown == true){
       this.player.moveDown()
@@ -59,9 +59,11 @@ export default class MainScene extends Phaser.Scene {
 
     if(this.keyboard.up.isDown==false && this.keyboard.down.isDown==false){
       this.player.setVelocityY(0)
+      this.player.playerfeet.setVelocityY(0)
     }
     if(this.keyboard.left.isDown==false && this.keyboard.right.isDown==false){
       this.player.setVelocityX(0)
+      this.player.playerfeet.setVelocityX(0)
     }
 
   }
@@ -69,14 +71,23 @@ export default class MainScene extends Phaser.Scene {
   animPlayer(){
     if (this.player.body.velocity.x > 0) { //moving right
         this.player.play("moveHandgun", true);
+        this.player.playerfeet.play("feetRun",true);
+
     } else if (this.player.body.velocity.x < 0) { //moving left
         this.player.anims.play("moveHandgun", true);
+        this.player.playerfeet.play("feetRun",true);
+
     } else if (this.player.body.velocity.y < 0) { //moving up
         this.player.play("moveHandgun", true);
+        this.player.playerfeet.play("feetRun",true);
+
     } else if (this.player.body.velocity.y > 0) { //moving down
         this.player.play("moveHandgun", true);
+        this.player.playerfeet.play("feetRun",true);
+
     }else{
       this.player.play("idleHandgun",true)
+      this.player.playerfeet.setTexture("player", "survivor-run_0")
     }
   }
   update(time:number, delta:number) {
