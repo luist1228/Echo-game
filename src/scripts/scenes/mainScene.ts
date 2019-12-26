@@ -1,6 +1,7 @@
 import FpsText from '../objects/fpsText'
 import {CST} from '../CST'
 import PlayerSprite from '../objects/Player'
+import Bullet from '../objects/Bullet'
 
 
 
@@ -9,6 +10,9 @@ export default class MainScene extends Phaser.Scene {
   fpsText: Phaser.GameObjects.Text
   public player: PlayerSprite
   keyboard!: any
+  bounds: Phaser.GameObjects.Components.GetBounds
+  bullets: any
+  reticle: Phaser.Physics.Arcade.Sprite
   
   constructor() {
     super({ key: CST.SCENES.PLAY})
@@ -19,7 +23,10 @@ export default class MainScene extends Phaser.Scene {
   }
   
   create() {
-    this.player=new PlayerSprite(this,100,100,350).setSize(177,130).setOffset(35,65)
+    const canvas = this.sys.canvas
+    canvas.style.cursor = 'none'
+    this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
+    this.player = new PlayerSprite(this,100,100,350).setSize(177,130).setOffset(35,65)
     this.player.playerfeet.setSize(10,10).setOffset(50,77)
     //keyboard
     this.keyboard=this.input.keyboard.addKeys({
@@ -29,6 +36,11 @@ export default class MainScene extends Phaser.Scene {
       'left':Phaser.Input.Keyboard.KeyCodes.A,
     });
     this.player.playerfeet.play("feetRun");
+    this.bullets = this.physics.add.group({
+      defaultKey: 'bullet',
+      maxSize: 20,
+    })
+    // para usar la clase Bullet hay que pasarle como argumento un objeto CreateGroupConfig
     
     this.fpsText = new FpsText(this)
     
@@ -36,22 +48,20 @@ export default class MainScene extends Phaser.Scene {
       console.log(this.input.mousePointer.locked)
     }, this);
 
-   /*  this.input.on('pointerdown', () => {
-      this.input.mouse.requestPointerLock();
-      console.log(this.input.mouse.locked)
-    }); */
-    var reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
-
     
-   
+    this.input.on('pointerdown', (pointer) => {
+      // this.input.mouse.requestPointerLock();
+      // console.log(this.input.mouse.locked)
+      this.shoot(pointer)
+      // var bullet = this.physics.add.sprite(this.player.x, this.player.y, 'bullet').setScale(4)
+    });
+    
+    
     this.input.on('pointermove',  (pointer) => {
+      
+      this.reticle.x = pointer.x;
+      this.reticle.y = pointer.y;
 
-          console.log(pointer.X)
-      
-          reticle.x += pointer.X;
-          reticle.y += pointer.Y;
-       
-      
     }, this);
    
 
@@ -67,6 +77,19 @@ export default class MainScene extends Phaser.Scene {
         fontSize: 24
       })
       .setOrigin(1, 0) */
+  }
+
+  shoot(pointer) {
+    const bullet = this.bullets.get(this.player.x, this.player.y)
+    if(bullet) {
+      bullet.setActive(true)
+      bullet.setVisible(true)
+      this.physics.world.enableBody(bullet)
+      let lineAngle = Phaser.Math.Angle.Between(this.player.x, this.player.y, this.reticle.x, this.reticle.y) * 180 / 3.14
+      const velocityVector: Phaser.Math.Vector2 = this.physics.velocityFromAngle(lineAngle, 1000)
+      bullet.setVelocityX(velocityVector.x)
+      bullet.setVelocityY(velocityVector.y)
+    }
   }
   
 
