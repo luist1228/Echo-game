@@ -1,0 +1,1 @@
+export default class PlayerSprite extends Phaser.Physics.Arcade.Sprite{}
