@@ -9,7 +9,7 @@ export default class MainScene extends Phaser.Scene {
   fpsText: Phaser.GameObjects.Text
   public player: PlayerSprite
   keyboard!: any
-  
+  reticle: Phaser.Physics.Arcade.Sprite
   constructor() {
     super({ key: CST.SCENES.PLAY})
   }
@@ -19,8 +19,10 @@ export default class MainScene extends Phaser.Scene {
   }
   
   create() {
+    //Sprite Jugador
     this.player=new PlayerSprite(this,100,100,350).setSize(177,130).setOffset(35,65)
     this.player.playerfeet.setSize(10,10).setOffset(50,77)
+    
     //keyboard
     this.keyboard=this.input.keyboard.addKeys({
       'up': Phaser.Input.Keyboard.KeyCodes.W, 
@@ -28,36 +30,33 @@ export default class MainScene extends Phaser.Scene {
       'right' : Phaser.Input.Keyboard.KeyCodes.D,
       'left':Phaser.Input.Keyboard.KeyCodes.A,
     });
-    this.player.playerfeet.play("feetRun");
     
+    //Reticle
+    this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
+
+    //Texto Fps
     this.fpsText = new FpsText(this)
     
-    this.input.on('pointerup', (pointer) => {
-      console.log(this.input.mousePointer.locked)
-    }, this);
-
-   /*  this.input.on('pointerdown', () => {
-      this.input.mouse.requestPointerLock();
-      console.log(this.input.mouse.locked)
-    }); */
-    var reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
-
     
-   
+
+
+
+    /// Locks pointer on mousedown
+    this.input.on('pointerdown', () => {
+      this.input.mouse.requestPointerLock()      
+    })
+    
+    // Moves reticle with mouse movement
     this.input.on('pointermove',  (pointer) => {
-
-          console.log(pointer.X)
-      
-          reticle.x += pointer.X;
-          reticle.y += pointer.Y;
-       
-      
-    }, this);
+      if (this.input.mouse.locked)
+      {
+        this.reticle.x += pointer.movementX
+        this.reticle.y += pointer.movementY
+      }  
+    })
    
 
-    //const click=this.game.canvas.onpointerdown()
-    // Locks pointer on mousedown
-   
+  
 
     
 /*     //display the Phaser.VERSION
@@ -68,14 +67,45 @@ export default class MainScene extends Phaser.Scene {
       })
       .setOrigin(1, 0) */
   }
-  
 
+  lockPLayer(){
+    if (this.player.x>1280){
+      this.player.x= 1280
+      this.player.playerfeet.x=1280
+    }else if (this.player.x<0){
+      this.player.x=0
+      this.player.playerfeet.x=0
+    }
+
+    if (this.player.y>720){
+      this.player.y= 720
+      this.player.playerfeet.y=720
+    }else if (this.player.y<0){
+      this.player.y=0
+      this.player.playerfeet.y=0
+    }
+  }
+
+  lockReticle(){
+    if (this.reticle.x>1280){
+      this.reticle.x= 1280
+    }else if (this.reticle.x<0){
+      this.reticle.x=0
+    }
+
+    if (this.reticle.y>720){
+      this.reticle.y= 720
+    }else if (this.reticle.y<0){
+      this.reticle.y=0
+    }
+  }
+  
   rotatePlayer(){
-        //angle between mouse and ball
-        let angle=Phaser.Math.Angle.Between(this.player.x,this.player.y,this.input.x,this.input.y);
-        //rotation cannon
-        this.player.setRotation(angle);
-        this.player.playerfeet.setRotation(angle);
+    //angle between mouse and reticle
+    let angle=Phaser.Math.Angle.Between(this.player.x,this.player.y,this.reticle.x,this.reticle.y)
+    //rotate player
+    this.player.setRotation(angle)
+    this.player.playerfeet.setRotation(angle)
   }
 
   movePLayer(){
@@ -104,10 +134,6 @@ export default class MainScene extends Phaser.Scene {
 
   }
 
-  pointer(){
-
-  }
-
   animPlayer(){
 
     if (this.player.body.velocity.x > 0) { //moving right
@@ -131,9 +157,11 @@ export default class MainScene extends Phaser.Scene {
       this.player.playerfeet.setTexture("player", "survivor-run_0")
     }
   }
+
   update(time:number, delta:number) {
-    //this.player.play('diamond');
     this.fpsText.update()
+    this.lockReticle()
+    this.lockPLayer()
     this.movePLayer()
     this.rotatePlayer()
     this.animPlayer()
