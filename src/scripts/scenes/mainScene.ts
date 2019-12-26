@@ -1,20 +1,20 @@
-import PhaserLogo from '../objects/phaserLogo'
 import FpsText from '../objects/fpsText'
 import {CST} from '../CST'
 import PlayerSprite from '../objects/Player'
+
+
 
 export default class MainScene extends Phaser.Scene {
 
   fpsText: Phaser.GameObjects.Text
   public player: PlayerSprite
-  
   keyboard!: any
   
   constructor() {
     super({ key: CST.SCENES.PLAY})
   }
   preload(){
-    
+    this.load.image("bullet","assets/shot-1.png")
     console.log(this.textures.list)
   }
   
@@ -29,7 +29,35 @@ export default class MainScene extends Phaser.Scene {
       'left':Phaser.Input.Keyboard.KeyCodes.A,
     });
     this.player.playerfeet.play("feetRun");
+    
     this.fpsText = new FpsText(this)
+    
+    this.input.on('pointerup', (pointer) => {
+      console.log(this.input.mousePointer.locked)
+    }, this);
+
+   /*  this.input.on('pointerdown', () => {
+      this.input.mouse.requestPointerLock();
+      console.log(this.input.mouse.locked)
+    }); */
+    var reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
+
+    
+   
+    this.input.on('pointermove',  (pointer) => {
+
+          console.log(pointer.X)
+      
+          reticle.x += pointer.X;
+          reticle.y += pointer.Y;
+       
+      
+    }, this);
+   
+
+    //const click=this.game.canvas.onpointerdown()
+    // Locks pointer on mousedown
+   
 
     
 /*     //display the Phaser.VERSION
@@ -40,12 +68,20 @@ export default class MainScene extends Phaser.Scene {
       })
       .setOrigin(1, 0) */
   }
+  
 
-  movePLayer(player:PlayerSprite){
+  rotatePlayer(){
+        //angle between mouse and ball
+        let angle=Phaser.Math.Angle.Between(this.player.x,this.player.y,this.input.x,this.input.y);
+        //rotation cannon
+        this.player.setRotation(angle);
+        this.player.playerfeet.setRotation(angle);
+  }
+
+  movePLayer(){
 
     if(this.keyboard.up.isDown == true){
       this.player.moveUp()
-      
     }
     if (this.keyboard.down.isDown == true){
       this.player.moveDown()
@@ -68,22 +104,27 @@ export default class MainScene extends Phaser.Scene {
 
   }
 
+  pointer(){
+
+  }
+
   animPlayer(){
+
     if (this.player.body.velocity.x > 0) { //moving right
-        this.player.play("moveHandgun", true);
-        this.player.playerfeet.play("feetRun",true);
+      this.player.play("moveHandgun", true);
+      this.player.playerfeet.play("feetRun",true);
 
     } else if (this.player.body.velocity.x < 0) { //moving left
-        this.player.anims.play("moveHandgun", true);
-        this.player.playerfeet.play("feetRun",true);
+      this.player.anims.play("moveHandgun", true);
+      this.player.playerfeet.play("feetRun",true);
 
     } else if (this.player.body.velocity.y < 0) { //moving up
-        this.player.play("moveHandgun", true);
-        this.player.playerfeet.play("feetRun",true);
+      this.player.play("moveHandgun", true);
+      this.player.playerfeet.play("feetRun",true);
 
     } else if (this.player.body.velocity.y > 0) { //moving down
-        this.player.play("moveHandgun", true);
-        this.player.playerfeet.play("feetRun",true);
+      this.player.play("moveHandgun", true);
+      this.player.playerfeet.play("feetRun",true);
 
     }else{
       this.player.play("idleHandgun",true)
@@ -93,7 +134,8 @@ export default class MainScene extends Phaser.Scene {
   update(time:number, delta:number) {
     //this.player.play('diamond');
     this.fpsText.update()
-    this.movePLayer(this.player)
+    this.movePLayer()
+    this.rotatePlayer()
     this.animPlayer()
     
   }

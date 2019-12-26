@@ -12,6 +12,8 @@ export default class PreloadScene extends Phaser.Scene {
     //load Atlases
     this.load.atlas("player","assets/Packs/playersprite.png", "assets/Packs/playersprite_atlas.json")
     this.load.atlas("patas","assets/Packs/feet.png", "assets/Packs/feet_atlas.json")
+
+    this.load.spritesheet("cat", "assets/cat.png",{frameHeight:32,frameWidth:32})
   }
 
   create() {
@@ -45,6 +47,13 @@ export default class PreloadScene extends Phaser.Scene {
       frameRate:48,
       repeat:-1
     
+    })
+
+    this.anims.create({
+      key: 'walk',
+      frames:this.anims.generateFrameNumbers('cat',{frames:[0,1,2,3],}),
+      frameRate:4,
+      repeat:-1
     })
     
     this.scene.start(CST.SCENES.PLAY)
