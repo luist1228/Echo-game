@@ -12,6 +12,9 @@ export const CST = {
         
     },
     SPRITE: {
-        PLAYER:"PLAYER"
+        PLAYER:"PLAYER",
+        TEST: {
+            ENEMY: "ENEMY"
+        }
     }
 }
