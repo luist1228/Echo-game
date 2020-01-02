@@ -27,7 +27,7 @@ export default class MainScene extends Phaser.Scene {
     canvas.style.cursor = 'none'
     this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
     this.player = new PlayerSprite(this,100,100,350).setSize(177,130).setOffset(35,65)
-    this.enemy = new Enemy(this, 500, 500, 350).setSize(200, 200)
+    this.enemy = new Enemy(this, 500, 500, 350).setSize(200, 200).setImmovable(true).setCollideWorldBounds(true)
     this.player.playerfeet.setSize(10,10).setOffset(50,77)
     
     //keyboard
@@ -46,8 +46,8 @@ export default class MainScene extends Phaser.Scene {
 
     //Texto Fps
     this.fpsText = new FpsText(this)
-    
-    
+
+    this.physics.add.collider(this.enemy, this.bullets, this.enemyHit)
 
 
 
@@ -66,7 +66,6 @@ export default class MainScene extends Phaser.Scene {
       }  
     })
    
-
   
 
     
@@ -77,6 +76,10 @@ export default class MainScene extends Phaser.Scene {
         fontSize: 24
       })
       .setOrigin(1, 0) */
+  }
+
+  enemyHit(enemy, bullet) {
+    bullet.disableBody()
   }
 
   shoot(pointer) {
