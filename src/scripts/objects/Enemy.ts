@@ -13,7 +13,7 @@ export default class Enemy extends Phaser.Physics.Arcade.Sprite {
         this.scale = 1
         this.setX(x)
         this.setY(y)
-        this.setTexture("enemy")
+        this.setTexture("red-nigga")
         this.setScale(this.scale)
         this.setDepth(1)
 

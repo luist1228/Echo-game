@@ -2,13 +2,13 @@ import FpsText from '../objects/fpsText'
 import {CST} from '../CST'
 import PlayerSprite from '../objects/Player'
 import Bullet from '../objects/Bullet'
-
-
+import Enemy from '../objects/Enemy'
 
 export default class MainScene extends Phaser.Scene {
 
   fpsText: Phaser.GameObjects.Text
   public player: PlayerSprite
+  public enemy: Enemy
   keyboard!: any
   bounds: Phaser.GameObjects.Components.GetBounds
   bullets: any
@@ -27,6 +27,7 @@ export default class MainScene extends Phaser.Scene {
     canvas.style.cursor = 'none'
     this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
     this.player = new PlayerSprite(this,100,100,350).setSize(177,130).setOffset(35,65)
+    this.enemy = new Enemy(this, 500, 500, 350).setSize(200, 200)
     this.player.playerfeet.setSize(10,10).setOffset(50,77)
     
     //keyboard

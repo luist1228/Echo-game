@@ -8,6 +8,7 @@ export default class PreloadScene extends Phaser.Scene {
   preload() {
     //load Images
     this.load.image('phaser-logo', 'assets/img/phaser-logo.png')
+    this.load.image('red-nigga', 'assets/red-nigga.PNG')
     
     //load Atlases
     this.load.atlas("player","assets/Packs/playersprite.png", "assets/Packs/playersprite_atlas.json")
