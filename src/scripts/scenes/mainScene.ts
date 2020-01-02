@@ -80,6 +80,7 @@ export default class MainScene extends Phaser.Scene {
 
   enemyHit(enemy, bullet) {
     bullet.disableBody()
+    bullet.setVisible(false)
   }
 
   shoot(pointer) {
