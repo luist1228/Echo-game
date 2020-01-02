@@ -1,1 +1,4 @@
-export default class PlayerSprite extends Phaser.Physics.Arcade.Sprite{}
+import { Scene } from 'phaser'
+import {CST} from '../CST'
+
+export default class Bullet extends Phaser.Physics.Arcade.Sprite{}
