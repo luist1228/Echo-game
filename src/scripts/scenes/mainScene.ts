@@ -8,6 +8,7 @@ export default class MainScene extends Phaser.Scene {
 
   fpsText: Phaser.GameObjects.Text
   public player: PlayerSprite
+  public enemies: Phaser.GameObjects.Group
   public enemy: Enemy
   keyboard!: any
   bounds: Phaser.GameObjects.Components.GetBounds
@@ -21,13 +22,29 @@ export default class MainScene extends Phaser.Scene {
     this.load.image("bullet","assets/shot-1.png")
     console.log(this.textures.list)
   }
+
+  createEnemies(numEnemies: number): Array<Enemy> {
+    let enemies = Array(numEnemies)
+
+    enemies = enemies.map(item => {
+      let x = 500
+      let y = 500
+      let newEnemy =  new Enemy(this, x, y, 350).setSize(200, 200).setImmovable(true).setCollideWorldBounds(true)
+
+      return newEnemy
+    })
+
+
+    return enemies
+  }
   
   create() {
+    console.log('from create', this)
     const canvas = this.sys.canvas
     canvas.style.cursor = 'none'
     this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
     this.player = new PlayerSprite(this,100,100,350).setSize(177,130).setOffset(35,65)
-    this.enemy = new Enemy(this, 500, 500, 350).setSize(200, 200).setImmovable(true).setCollideWorldBounds(true)
+    // this.enemy = new Enemy(this, 500, 500, 350).setSize(200, 200).setImmovable(true).setCollideWorldBounds(true)
     this.player.playerfeet.setSize(10,10).setOffset(50,77)
     
     //keyboard
@@ -38,16 +55,27 @@ export default class MainScene extends Phaser.Scene {
       'left':Phaser.Input.Keyboard.KeyCodes.A,
     });
     this.player.playerfeet.play("feetRun");
+
     this.bullets = this.physics.add.group({
       defaultKey: 'bullet',
       maxSize: 20,
     })
     // para usar la clase Bullet hay que pasarle como argumento un objeto CreateGroupConfig
 
+    this.enemies = this.physics.add.group({
+      classType: Enemy,
+      defaultKey: 'enemy',
+      maxSize: 10,
+    })
+
+    let enemy = new Enemy(this, 500, 500, 350).setSize(200, 200).setImmovable(true).setCollideWorldBounds(true)
+    enemy.body.immovable = false
+    this.enemies.add(enemy)
+
+    this.physics.add.overlap(this.enemies, this.bullets, this.enemyHit)
+
     //Texto Fps
     this.fpsText = new FpsText(this)
-
-    this.physics.add.collider(this.enemy, this.bullets, this.enemyHit)
 
 
 
@@ -79,6 +107,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   enemyHit(enemy, bullet) {
+    enemy.receiveDamage(10)
     bullet.disableBody()
     bullet.setVisible(false)
   }
