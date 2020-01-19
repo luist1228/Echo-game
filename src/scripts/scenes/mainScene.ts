@@ -33,10 +33,9 @@ export default class MainScene extends Phaser.Scene {
     let middlelayer=this.map.createDynamicLayer("middle",[this.terrain],0,0)
     let toplayer=this.map.createDynamicLayer("top",[this.terrain],0,0)
 
-    const canvas = this.sys.canvas
-    canvas.style.cursor = 'none'
+    //player
     this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
-    this.player = new PlayerSprite(this,100,100,350).setSize(177,130).setOffset(35,65)
+    this.player = new PlayerSprite(this,200,200,350).setSize(177,130).setOffset(35,65).setScale(0.3)
     this.player.playerfeet.setSize(10,10).setOffset(50,77)
     
 
@@ -45,7 +44,16 @@ export default class MainScene extends Phaser.Scene {
     this.physics.add.collider(middlelayer,this.player)
 
     toplayer.setCollisionByProperty({collides:true})
+    botlayer.setCollisionByProperty({collides:true})
+    //Camera
+    this.cameras.main.startFollow(this.player)
 
+    //Bounds
+    this.physics.world.setBounds(0,0,this.map.widthInPixels,this.map.heightInPixels)
+    this.player.setCollideWorldBounds(true)
+    
+    console.log(this.map.heightInPixels,this.map.widthInPixels)
+    console.log(this.physics.world.bounds.height)
 
     //keyboard
     this.keyboard=this.input.keyboard.addKeys({
