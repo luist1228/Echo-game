@@ -3,8 +3,6 @@ import {CST} from '../CST'
 import PlayerSprite from '../objects/Player'
 import Bullet from '../objects/Bullet'
 
-
-
 export default class MainScene extends Phaser.Scene {
 
   fpsText: Phaser.GameObjects.Text
@@ -13,6 +11,8 @@ export default class MainScene extends Phaser.Scene {
   bounds: Phaser.GameObjects.Components.GetBounds
   bullets: any
   reticle: Phaser.Physics.Arcade.Sprite
+  map: Phaser.Tilemaps.Tilemap
+  terrain:Phaser.Tilemaps.Tileset
   
   constructor() {
     super({ key: CST.SCENES.PLAY})
@@ -23,20 +23,48 @@ export default class MainScene extends Phaser.Scene {
   }
   
   create() {
-    const canvas = this.sys.canvas
-    canvas.style.cursor = 'none'
+    //Tiles
+    this.map=this.add.tilemap("map")
+    this.terrain=this.map.addTilesetImage("terrain_atlas", "terrain")
+
+    //Layers
+    let botlayer=this.map.createStaticLayer("bot",[this.terrain],0,0)
+    let middlelayer=this.map.createDynamicLayer("middle",[this.terrain],0,0)
+    let toplayer=this.map.createDynamicLayer("top",[this.terrain],0,0)
+
+    //Player
+    this.player = new PlayerSprite(this,200,200,350).setSize(177,130).setOffset(35,65).setScale(0.3)
+    this.player.playerfeet.setSize(10,10).setOffset(50,77)
+    
+    //Reticle
     this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
-    this.player = new PlayerSprite(this,100,100,350).setSize(177,130).setOffset(35,65)
-    
-    
-    //keyboard
+    this.physics.world.enableBody(this.reticle)
+
+    //Map Collisions 
+    this.physics.add.collider(toplayer, this.player)
+    this.physics.add.collider(middlelayer,this.player)
+
+    toplayer.setCollisionByProperty({collides:true})
+    botlayer.setCollisionByProperty({collides:true})
+   
+    //Bounds
+    this.physics.world.setBounds(0,0,this.map.widthInPixels,this.map.heightInPixels)
+    this.player.setCollideWorldBounds(true)
+    this.reticle.setCollideWorldBounds(true)
+
+     //Camera
+    this.cameras.main.setBounds(0, 0, this.physics.world.bounds.width,this.physics.world.bounds.height).setName('main');
+    this.cameras.main.startFollow(this.player)
+
+    //Keyboard
     this.keyboard=this.input.keyboard.addKeys({
       'up': Phaser.Input.Keyboard.KeyCodes.W, 
       'down': Phaser.Input.Keyboard.KeyCodes.S,
       'right' : Phaser.Input.Keyboard.KeyCodes.D,
       'left':Phaser.Input.Keyboard.KeyCodes.A,
     });
-    
+
+    //Bullet 
     this.bullets = this.physics.add.group({
       defaultKey: 'bullet',
       maxSize: 20,
@@ -48,7 +76,7 @@ export default class MainScene extends Phaser.Scene {
     
     
 
-
+    //FUNCIONES
 
     /// Locks pointer on mousedown
     this.input.on('pointerdown', (pointer) => {
@@ -68,7 +96,6 @@ export default class MainScene extends Phaser.Scene {
 
   
 
-    
 /*     //display the Phaser.VERSION
     this.add
       .text(this.cameras.main.width - 15, 15, `Phaser v${Phaser.VERSION}`, {
@@ -90,40 +117,7 @@ export default class MainScene extends Phaser.Scene {
       bullet.setVelocityY(velocityVector.y)
     }
   }
-  
 
-  lockPLayer(){
-    if (this.player.x>1280){
-      this.player.x= 1280
-      this.player.playerfeet.x=1280
-    }else if (this.player.x<0){
-      this.player.x=0
-      this.player.playerfeet.x=0
-    }
-
-    if (this.player.y>720){
-      this.player.y= 720
-      this.player.playerfeet.y=720
-    }else if (this.player.y<0){
-      this.player.y=0
-      this.player.playerfeet.y=0
-    }
-  }
-
-  lockReticle(){
-    if (this.reticle.x>1280){
-      this.reticle.x= 1280
-    }else if (this.reticle.x<0){
-      this.reticle.x=0
-    }
-
-    if (this.reticle.y>720){
-      this.reticle.y= 720
-    }else if (this.reticle.y<0){
-      this.reticle.y=0
-    }
-  }
-  
   rotatePlayer(){
     //angle between mouse and reticle
     let angle=Phaser.Math.Angle.Between(this.player.x,this.player.y,this.reticle.x,this.reticle.y)
@@ -179,8 +173,8 @@ export default class MainScene extends Phaser.Scene {
 
   update(time:number, delta:number) {
     this.fpsText.update()
-    this.lockReticle()
-    this.lockPLayer()
+    //this.lockReticle()
+    //this.lockPLayer()
     this.movePLayer()
     this.rotatePlayer()
     this.animPlayer()
