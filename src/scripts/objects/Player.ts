@@ -14,9 +14,6 @@ export default class PlayerSprite extends Phaser.Physics.Arcade.Sprite{
         scene.physics.world.enableBody(this);
         this.setX(x)
         this.setY(y)
-        this.playerfeet=new Phaser.Physics.Arcade.Sprite(scene,x,y,"feet").setScale(this.scale)
-        scene.add.existing(this.playerfeet)
-        scene.physics.world.enableBody(this.playerfeet)
         this.speed=speed
         this.setDepth(1)
 
@@ -24,19 +21,15 @@ export default class PlayerSprite extends Phaser.Physics.Arcade.Sprite{
 
     moveUp(){
         this.setVelocityY(-this.speed)
-        this.playerfeet.setVelocityY(-this.speed)
     }
     moveDown(){
         this.setVelocityY(this.speed)
-        this.playerfeet.setVelocityY(this.speed)
     }
     moveLeft(){
         this.setVelocityX(-this.speed)
-        this.playerfeet.setVelocityX(-this.speed)
     }
     moveRight(){
         this.setVelocityX(this.speed)
-        this.playerfeet.setVelocityX(this.speed)
     }
 
 }
