@@ -23,7 +23,7 @@ export default class MainScene extends Phaser.Scene {
   }
   
   create() {
-    //Tiles
+    //Tilemap
     this.map=this.add.tilemap("map")
     this.terrain=this.map.addTilesetImage("terrain_atlas", "terrain")
 
@@ -34,7 +34,6 @@ export default class MainScene extends Phaser.Scene {
 
     //Player
     this.player = new PlayerSprite(this,200,200,350).setSize(177,130).setOffset(35,65).setScale(0.3)
-    this.player.playerfeet.setSize(10,10).setOffset(50,77)
     
     //Reticle
     this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
