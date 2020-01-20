@@ -25,37 +25,40 @@ export default class MainScene extends Phaser.Scene {
   }
   
   create() {
-    //tiles
+    //Tiles
     this.map=this.add.tilemap("map")
     this.terrain=this.map.addTilesetImage("terrain_atlas", "terrain")
-    //layers
+
+    //Layers
     let botlayer=this.map.createStaticLayer("bot",[this.terrain],0,0)
     let middlelayer=this.map.createDynamicLayer("middle",[this.terrain],0,0)
     let toplayer=this.map.createDynamicLayer("top",[this.terrain],0,0)
 
-    //player
-    this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
+    //Player
     this.player = new PlayerSprite(this,200,200,350).setSize(177,130).setOffset(35,65).setScale(0.3)
     this.player.playerfeet.setSize(10,10).setOffset(50,77)
     
+    //Reticle
+    this.reticle = this.physics.add.sprite(200, 200, 'bullet').setScale(4);
+    this.physics.world.enableBody(this.reticle)
 
-    //collisions
+    //Map Collisions 
     this.physics.add.collider(toplayer, this.player)
     this.physics.add.collider(middlelayer,this.player)
 
     toplayer.setCollisionByProperty({collides:true})
     botlayer.setCollisionByProperty({collides:true})
-    //Camera
-    this.cameras.main.startFollow(this.player)
-
+   
     //Bounds
     this.physics.world.setBounds(0,0,this.map.widthInPixels,this.map.heightInPixels)
     this.player.setCollideWorldBounds(true)
-    
-    console.log(this.map.heightInPixels,this.map.widthInPixels)
-    console.log(this.physics.world.bounds.height)
+    this.reticle.setCollideWorldBounds(true)
 
-    //keyboard
+     //Camera
+    this.cameras.main.setBounds(0, 0, this.physics.world.bounds.width,this.physics.world.bounds.height).setName('main');
+    this.cameras.main.startFollow(this.player)
+
+    //Keyboard
     this.keyboard=this.input.keyboard.addKeys({
       'up': Phaser.Input.Keyboard.KeyCodes.W, 
       'down': Phaser.Input.Keyboard.KeyCodes.S,
@@ -63,6 +66,7 @@ export default class MainScene extends Phaser.Scene {
       'left':Phaser.Input.Keyboard.KeyCodes.A,
     });
 
+    //Bullet 
     this.bullets = this.physics.add.group({
       defaultKey: 'bullet',
       maxSize: 20,
@@ -115,40 +119,7 @@ export default class MainScene extends Phaser.Scene {
       bullet.setVelocityX(velocityVector.x)
       bullet.setVelocityY(velocityVector.y)
     }
-  }
-  
-
-/*   lockPLayer(){
-    if (this.player.x>1280){
-      this.player.x= 1280
-      this.player.playerfeet.x=1280
-    }else if (this.player.x<0){
-      this.player.x=0
-      this.player.playerfeet.x=0
-    }
-
-    if (this.player.y>720){
-      this.player.y= 720
-      this.player.playerfeet.y=720
-    }else if (this.player.y<0){
-      this.player.y=0
-      this.player.playerfeet.y=0
-    }
-  } */
-
-/*   lockReticle(){
-    if (this.reticle.x>1280){
-      this.reticle.x= 1280
-    }else if (this.reticle.x<0){
-      this.reticle.x=0
-    }
-
-    if (this.reticle.y>720){
-      this.reticle.y= 720
-    }else if (this.reticle.y<0){
-      this.reticle.y=0
-    }
-  } */
+  }plq
   
   rotatePlayer(){
     //angle between mouse and reticle
