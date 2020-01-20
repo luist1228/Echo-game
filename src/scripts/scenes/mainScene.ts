@@ -3,8 +3,6 @@ import {CST} from '../CST'
 import PlayerSprite from '../objects/Player'
 import Bullet from '../objects/Bullet'
 
-
-
 export default class MainScene extends Phaser.Scene {
 
   fpsText: Phaser.GameObjects.Text
@@ -78,7 +76,7 @@ export default class MainScene extends Phaser.Scene {
     
     
 
-
+    //FUNCIONES
 
     /// Locks pointer on mousedown
     this.input.on('pointerdown', (pointer) => {
@@ -98,7 +96,6 @@ export default class MainScene extends Phaser.Scene {
 
   
 
-    
 /*     //display the Phaser.VERSION
     this.add
       .text(this.cameras.main.width - 15, 15, `Phaser v${Phaser.VERSION}`, {
@@ -119,8 +116,8 @@ export default class MainScene extends Phaser.Scene {
       bullet.setVelocityX(velocityVector.x)
       bullet.setVelocityY(velocityVector.y)
     }
-  }plq
-  
+  }
+
   rotatePlayer(){
     //angle between mouse and reticle
     let angle=Phaser.Math.Angle.Between(this.player.x,this.player.y,this.reticle.x,this.reticle.y)
