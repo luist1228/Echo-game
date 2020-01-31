@@ -1,10 +1,7 @@
 import Phaser from 'phaser'
 import MainScene from './scenes/mainScene'
 import PreloadScene from './scenes/preloadScene'
-
-
-
-
+import PathFollowerPlugin from 'phaser3-rex-plugins/plugins/pathfollower-plugin.js'
 
 const DEFAULT_WIDTH = 1280
 const DEFAULT_HEIGHT = 720
@@ -28,6 +25,14 @@ const config: GameConfig = {
       debug: true,
       
     }
+  },
+  plugins: {
+    global: [{
+        key: 'rexPathFollower',
+        plugin: PathFollowerPlugin,
+        start: true
+    },
+    ]
   }
 }
 
