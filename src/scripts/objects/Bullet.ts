@@ -27,6 +27,12 @@ export default class Bullet extends Phaser.Physics.Arcade.Sprite{
 
     }
 
+    fire(x: number, y: number) {
+        this.body.reset(x, y);
+        this.setActive(true);
+        this.setVisible(true);
+    }
+
     disappear() {
         
     }
